@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.1
+- https://www.phpmyadmin.net
+-
+- Хост: 127.0.0.1
+- Время создания: Мар 28 2024 г., 21:52
+- Версия сервера: 10.4.32-MariaDB
+- Версия PHP: 8.0.30
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="строительная фирма" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="constructioncompany">
+                CREATE TABLE `constructioncompany` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `first_name` varchar(50) DEFAULT NULL,
+                  `last_name` varchar(50) DEFAULT NULL,
+                  `address` varchar(100) DEFAULT NULL,
+                  `email` varchar(100) DEFAULT NULL,
+                  `city` varchar(50) DEFAULT NULL,
+                  `country` varchar(50) DEFAULT NULL,
+                  `zip_code` varchar(20) DEFAULT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - База данных: 'строительная фирма'
+    -->
+    <database name="строительная фирма">
+        <!-- Таблица constructioncompany -->
+        <table name="constructioncompany">
+            <column name="id">1</column>
+            <column name="first_name">Иван</column>
+            <column name="last_name">Иванов</column>
+            <column name="address">ул. Ленина, д. 10</column>
+            <column name="email">ivanov@mail.ru</column>
+            <column name="city">Москва</column>
+            <column name="country">Россия</column>
+            <column name="zip_code">123456</column>
+        </table>
+    </database>
+</pma_xml_export>

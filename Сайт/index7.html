@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оповещение оформленного заказа</title>
+  <style>
+    .notification {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ваш заказ оформлен!</h1>
+
+  <div class="notification">
+    <p>Спасибо за ваш заказ. Мы его обработаем в ближайшее время.Цена вашего заказа $15000000</p>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма ввода данных</title>
+  <script>
+    function saveData() {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      // Здесь можно добавить код для сохранения данных в базу данных или локальное хранилище
+    }
+    
+    function clearData() {
+      document.getElementById("firstName").value = "";
+      document.getElementById("lastName").value = "";
+      // Здесь можно добавить код для удаления данных из базы данных или локального хранилища
+    }
+  </script>
+</head>
+<body>
+  <h2>Введите данные</h2>
+  <form>
+    <label for="firstName">Имя:</label>
+    <input type="text" id="firstName" name="firstName"><br><br>
+    <label for="lastName">Фамилия:</label>
+    <input type="text" id="lastName" name="lastName"><br><br>
+    <button type="button" onclick="saveData()">Сохранить данные</button>
+    <button type="button" onclick="clearData()">Удалить данные</button>
+  </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Введите данные</title>
+</head>
+<body>
+
+<h1>Введите данные</h1>
+
+
+    <form id="personalDataForm">
+      <label for="lastName">Last Name: </label>
+      <input type="text" id="lastName"><br>
+  
+      <label for="firstName">First Name: </label>
+      <input type="text" id="firstName"><br>
+  
+      <label for="patronymic">Patronymic: </label>
+      <input type="text" id="patronymic"><br>
+  
+      <label for="dob">Date of Birth: </label>
+      <input type="date" id="dob"><br>
+  
+      
+  </form>
+    <input type="text" id="dataInput">
+    <input type="text" id="lastName">
+   <input type="text" id="firstName">
+         <input type="text" id="patronymic">
+      <input type="date" id="dob">
+  
+    <button type="button" onclick="saveData()">Save Data</button>
+
+</form>
+
+<div id="savedData"></div>
+
+<script>
+    // Функция для сохранения данных
+    function saveData() {
+        var dataInput = document.getElementById('dataInput').value;
+        localStorage.setItem('savedData', dataInput);
+        loadData();
+    }
+
+    // Функция для загрузки данных
+    function loadData() {
+        var savedData = localStorage.getItem('savedData');
+        document.getElementById('savedData').innerHTML = "<p>Saved Data: " + savedData + "</p>";
+    }
+
+    // Загрузка сохраненных данных при загрузке страницы
+    window.onload = function() {
+        loadData();
+    };
+</script>
+
+</body>
+</html>
+
+
+<!doctype html>
+<html>
+<head>
+<title>Регистрация</title>
+</head>
+<body>
+<h1>Регистрация</h1>
+
+<form id="registrationForm">
+  <label for="name">Имя: </label>
+  <input type="text" id="name"><br>
+
+  <label for="email">Email: </label>
+  <input type="email" id="email"><br>
+
+  <label for="password">Пароль: </label>
+  <input type="password" id="password"><br>
+
+  <label for="confirmPassword">Подтвердите пароль: </label>
+  <input type="password" id="confirmPassword"><br>
+
+  <button type="button" onclick="register()">Зарегистрироваться</button>
+</form>
+
+<div id="registrationStatus"></div>
+
+<script>
+function register() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var confirmPassword = document.getElementById('confirmPassword').value;
+  
+  if (password !== confirmPassword) {
+    document.getElementById('registrationStatus').innerHTML = "<p>Пароли не совпадают.</p>";
+    return;
+  }
+  
+  // Ваш код для отправки данных регистрации на сервер
+  
+  document.getElementById('registrationStatus').innerHTML = "<p>Регистрация успешно завершена.</p>";
+}
+</script>
+
+</body>
+</html>
